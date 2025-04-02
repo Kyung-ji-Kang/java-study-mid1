@@ -1,15 +1,15 @@
 package lang.immutable.address;
 
-public class Adderss {
+public class Address {
     private String value;
 
-    public Adderss(String value) {
+    public Address(String value) {
         this.value = value;
     }
 
     @Override
     public String toString() {
-        return "Adderss{" +
+        return "Address{" +
                 "value=" + value +
                 '}';
     }
