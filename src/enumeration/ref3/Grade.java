@@ -1,4 +1,4 @@
-package ref3;
+package enumeration.ref3;
 
 public enum Grade {
         BASIC(10), GOLD(20), DIAMOND(30);
