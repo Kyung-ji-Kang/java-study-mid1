@@ -8,7 +8,9 @@ public class MainV1 {
 
 
     public static void main(String[] args) {
-        NetworkService_V1_1 networksErvice = new NetworkService_V1_1();
+        //NetworkService_V1_1 networksErvice = new NetworkService_V1_1();
+        //NetworkService_V1_2 networksErvice = new NetworkService_V1_2();
+        NetworkService_V1_3 networksErvice = new NetworkService_V1_3();
 
         Scanner sc = new Scanner(System.in);
 

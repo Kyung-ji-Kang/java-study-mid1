@@ -6,10 +6,17 @@ public class NetworkClientV1 {
     private boolean connectError; //연결 실패 에러
     public boolean sendError; // 전송 실패 에러
 
-
-
     public NetworkClientV1(String address) {
         this.address = address;
+    }
+
+    public void initError(String data){
+        if(data.contains("error1")){
+            connectError = true;
+        }
+        if (data.contains("error2")){
+            sendError = true;
+        }
     }
 
     public String connect(){
@@ -36,13 +43,6 @@ public class NetworkClientV1 {
         System.out.println(address+ " 서버 연결 해제");
     }
 
-    public void initError(String data){
-        if(data.contains("error01")){
-            connectError = true;
-        }
-        if (data.contains("error02")){
-            sendError = true;
-        }
-    }
+
 
 }
