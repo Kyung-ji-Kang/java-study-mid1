@@ -1,14 +1,11 @@
-package exception.ex2;
+package exception.ex3.exception;
 
-public class NetworkClientV2 {
+
+public class NetworkClientV3 {
 
     private final String address;
     private boolean connectError; //연결 실패 에러
     public boolean sendError; // 전송 실패 에러
-
-    public NetworkClientV2(String address) {
-        this.address = address;
-    }
 
     public void initError(String data){
         if(data.contains("error1")){
@@ -19,19 +16,25 @@ public class NetworkClientV2 {
         }
     }
 
-    public void connect() throws  NetworkClientExceptionV2{
+
+    public NetworkClientV3(String address) {
+        this.address = address;
+    }
+
+
+    public void connect() throws NetworkClientExceptionV3 {
         if(connectError){
-            throw new NetworkClientExceptionV2("connectError",address + " 서버 연결 실페");
+            throw new ConnectExceptionV3(address,address + " 서버 연결 실페");
         }
         //연결 성공
         System.out.println(address + " 서버 연결 성공");
     }
 
-    public void send(String data) throws NetworkClientExceptionV2   {
+    public void send(String data) throws NetworkClientExceptionV3   {
         if(sendError){
-            throw new NetworkClientExceptionV2("sendError",address+ " 서버에 데이터 전송 실패: "+ data);
-            //중간에 다른 에러가 발생했다 가정
-//            throw new RuntimeException("Run_time_error");
+            throw new SendExceptionV3(address+ " 서버에 데이터 전송 실패: ", data);
+            // 중간에 다른 에러가 발생했다 가정
+            // throw new RuntimeException("Run_time_error");
         }
         //전송 성공
         System.out.println(address +" 서버에 데이터 전송: "+ data);
